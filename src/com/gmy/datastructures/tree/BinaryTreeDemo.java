@@ -238,4 +238,22 @@ class Node{
         return temp;
     }
 
+    public Node preFind2(int no) {
+        if(this.no == no){
+            return this;
+        }
+        if(this.left != null){
+            Node node = this.left.preFind2(no);
+            if(node != null){
+                return node;
+            }
+        }
+        if(this.right != null){
+            Node node = this.right.preFind2(no);
+            if(node != null){
+                return node;
+            }
+        }
+        return null;
+    }
 }
